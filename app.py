@@ -1,23 +1,16 @@
-import streamlit.components.v1 as components
+import ee 
 import streamlit as st 
-import ee as ee
-import geemap
-geemap.update_package()
+import geemap.foliumap as geemap
 
-import ipyleaflet as leaflet
-import folium as folium
-import leafmap
-import numpy as np
-import pandas as pd
-import json
+WIDTH = 1060
+HEIGHT = 600
 
-
-
-st.title("Active Fires Map")
+def app():
+    st.title("Active Fires Map")
     
-Map = geemap.Map(center=(49, -120), zoom=6.5)
-Map.add_basemap('CartoDB.Positron')
-dataset_inz = ee.ImageCollection('FIRMS')
-image2 = dataset_inz.first()
-Map.addLayer(image2, {}, 'Active Fires:FIRMS')
-Map
+    Map = geemap.Map(center=(49, -120), zoom=6.5)
+    Map.add_basemap('CartoDB.Positron')
+    dataset_inz = ee.ImageCollection('FIRMS')
+    image2 = dataset_inz.first()
+    Map.addLayer(image2, {}, 'Active Fires:FIRMS')
+    Map
