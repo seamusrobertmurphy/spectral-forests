@@ -1,7 +1,9 @@
 import streamlit.components.v1 as components
 import streamlit as st 
 import ee as ee
-import geemap as gee
+import geemap
+geemap.update_package()
+
 import ipyleaflet as leaflet
 import folium as folium
 import leafmap
