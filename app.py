@@ -4,6 +4,7 @@ import ee as ee
 import geemap as gee
 import ipyleaflet as leaflet
 import folium as folium
+import leafmap
 import numpy as np
 import pandas as pd
 import json
